@@ -1,6 +1,7 @@
 # from https://github.com/RedHatGov/ansible-tower-samples/blob/master/product_demos.yml
 ---
 controller_validate_certs: false
+controller_configuration_async_delay: 3
 controller_settings:
   - name: AWX_COLLECTIONS_ENABLED
     value: "false"
