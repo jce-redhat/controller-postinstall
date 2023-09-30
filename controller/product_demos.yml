@@ -7,6 +7,8 @@ controller_settings:
     value: "false"
   - name: CUSTOM_LOGIN_INFO
     value: "Remember, no matter where you go, there you are"
+  - name: CUSTOM_LOGO
+    value: "data:image/png;base64,{{ lookup('file', controller_postinstall_dir + '/zen-bull.b64') }}"
 controller_credentials:
   - name: Automation Hub
     organization: Default
