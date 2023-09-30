@@ -5,6 +5,8 @@ controller_configuration_async_delay: 3
 controller_settings:
   - name: AWX_COLLECTIONS_ENABLED
     value: "false"
+  - name: CUSTOM_LOGIN_INFO
+    value: "Remember, no matter where you go, there you are"
 controller_credentials:
   - name: Automation Hub
     organization: Default
