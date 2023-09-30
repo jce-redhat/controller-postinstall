@@ -6,9 +6,9 @@ controller_settings:
   - name: AWX_COLLECTIONS_ENABLED
     value: "false"
   - name: CUSTOM_LOGIN_INFO
-    value: "<center>Remember, no matter where you go,<br>there you are</center>"
+    value: '<p style="text-align:center,max-width=300px">Remember, no matter where you go,<br>there you are</p>'
   - name: CUSTOM_LOGO
-    value: "data:image/png;base64,{{ lookup('file', controller_postinstall_dir + '/zen-bull.b64') }}"
+    value: 'data:image/png;base64,{{ lookup("file", controller_postinstall_dir + "/zen-bull.b64")'
 controller_credentials:
   - name: Automation Hub
     organization: Default
