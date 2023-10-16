@@ -36,8 +36,8 @@ controller_projects:
   - name: Ansible official demo project
     organization: Default
     scm_type: git
-    scm_url: https://github.com/ansible/product-demos
-    scm_branch: main
+    scm_url: https://github.com/l3acon/product-demos
+    scm_branch: multi-demo
     wait: true
 controller_templates:
   - name: "SETUP"
