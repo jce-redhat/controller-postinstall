@@ -63,5 +63,27 @@ controller_templates:
             - network
             - openshift
             - satellite
+  - name: "Multi-SETUP demos"
+    project: "Ansible official demo project"
+    playbook: "multi_select_setup.yml"
+    inventory: "Demo Inventory"
+    credentials: "Controller Credential"
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: "Which demos do you want to configure?"
+          type: multiselect
+          variable: demos
+          required: true
+          default: "cloud\nlinux\nnetwork\nopenshift\nwindows"
+          choices:
+            - cloud
+            - linux
+            - network
+            - openshift
+            - satellite
+            - windows
 
 ...
