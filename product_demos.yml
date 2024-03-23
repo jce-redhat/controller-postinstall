@@ -23,12 +23,10 @@ controller_credentials:
       # set to false when using self-signed certs
       verify_ssl: false
 controller_execution_environments:
-  - name: product-demos
+  - name: Product Demos EE
     image: quay.io/acme_corp/product-demos-ee:latest
 controller_organizations:
   - name: Default
-    default_environment:
-      name: 'product-demos'
     galaxy_credentials:
       - Ansible Galaxy
       - Automation Hub
@@ -40,7 +38,7 @@ controller_projects:
     scm_branch: main
     wait: true
 controller_templates:
-  - name: "SETUP"
+  - name: "Product Demos | Single demo setup"
     job_type: run
     inventory: "Demo Inventory"
     project: "Ansible official demo project"
@@ -63,7 +61,7 @@ controller_templates:
             - network
             - openshift
             - satellite
-  - name: "Multi-SETUP demos"
+  - name: "Product Demos | Multi-demo setup"
     project: "Ansible official demo project"
     playbook: "multi_select_setup.yml"
     inventory: "Demo Inventory"
