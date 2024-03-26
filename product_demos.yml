@@ -36,6 +36,7 @@ controller_projects:
     scm_type: git
     scm_url: https://github.com/ansible/product-demos
     scm_branch: main
+    default_environment: Product Demos EE
     wait: true
 controller_templates:
   - name: "Product Demos | Single demo setup"
