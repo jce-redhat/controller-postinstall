@@ -8,5 +8,15 @@ controller_settings:
     value: 'Remember: no matter where you go, there you are'
   - name: CUSTOM_LOGO
     value: 'data:image/png;base64,{{ lookup("file", controller_postinstall_dir + "/zen-bull.b64") }}'
+controller_credentials:
+  - name: Controller Credential
+    organization: Default
+    credential_type: Red Hat Ansible Automation Platform
+    inputs:
+      host: https://{{ groups.automationcontroller[0] }}
+      username: admin
+      password: '{{ controller_admin_password }}'
+      # set to false when using self-signed certs
+      verify_ssl: false
 
 ...
