@@ -5,7 +5,7 @@ controller_settings:
   - name: AWX_COLLECTIONS_ENABLED
     value: "false"
   - name: CUSTOM_LOGIN_INFO
-    value: 'No matter where you go, there you are'
+    value: 'No matter where you go... there you are'
   - name: CUSTOM_LOGO
     value: 'data:image/png;base64,{{ lookup("file", controller_postinstall_dir + "/zen-bull.b64") }}'
 controller_credentials:
@@ -18,5 +18,41 @@ controller_credentials:
       password: '{{ controller_admin_password }}'
       # set to false when using self-signed certs
       verify_ssl: false
+  - name: AAP Configuration deploy key
+    organization: Default
+    credential_type: Source Control
+    inputs:
+      ssh_key_data: ''
+    state: exists
+controller_execution_environments:
+  - name: Product Demos EE
+    image: quay.io/acme_corp/product-demos-ee:latest
+controller_inventories:
+  - name: AAP Inventory
+    organization: Default
+controller_hosts:
+  - name: localhost
+    inventory: AAP Inventory
+    enabled: true
+  - name: '{{ groups.automationcontroller[0] }}'
+    inventory: AAP Inventory
+    enabled: true
+controller_projects:
+  - name: AAP Configuration
+    organization: Default
+    scm_branch: main
+    scm_type: git
+    scm_url: git@gitlab.com:jce_redhat/aap-configuration.git
+    credential: AAP Configuration deploy key
+controller_templates:
+  - name: AAP | Controller configuration
+    job_type: run
+    inventory: AAP Inventory
+    execution_environment: Product Demos EE
+    project: AAP Configuration
+    playbook: aap-config.yml
+    credentials:
+      - Controller Credential
+    ask_verbosity_on_launch: true
 
 ...
