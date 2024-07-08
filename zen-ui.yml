@@ -22,7 +22,10 @@ controller_credentials:
     organization: Default
     credential_type: Source Control
     inputs:
+      username: ''
+      password: ''
       ssh_key_data: ''
+      ssh_key_unlock: ''
     state: exists
 controller_execution_environments:
   - name: Product Demos EE
