@@ -26,7 +26,6 @@ controller_credentials:
       password: ''
       ssh_key_data: ''
       ssh_key_unlock: ''
-    state: exists
 controller_execution_environments:
   - name: Product Demos EE
     image: quay.io/acme_corp/product-demos-ee:latest
