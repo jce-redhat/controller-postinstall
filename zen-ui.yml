@@ -39,22 +39,22 @@ controller_hosts:
   - name: '{{ groups.automationcontroller[0] }}'
     inventory: AAP Inventory
     enabled: true
-controller_projects:
-  - name: AAP Configuration
-    organization: Default
-    scm_branch: main
-    scm_type: git
-    scm_url: git@gitlab.com:jce_redhat/aap-configuration.git
-    credential: AAP Configuration deploy key
-controller_templates:
-  - name: AAP | Controller configuration
-    job_type: run
-    inventory: AAP Inventory
-    execution_environment: Product Demos EE
-    project: AAP Configuration
-    playbook: aap-config.yml
-    credentials:
-      - Controller Credential
-    ask_verbosity_on_launch: true
+#controller_projects:
+#  - name: AAP Configuration
+#    organization: Default
+#    scm_branch: main
+#    scm_type: git
+#    scm_url: git@gitlab.com:jce_redhat/aap-configuration.git
+#    credential: AAP Configuration deploy key
+#controller_templates:
+#  - name: AAP | Controller configuration
+#    job_type: run
+#    inventory: AAP Inventory
+#    execution_environment: Product Demos EE
+#    project: AAP Configuration
+#    playbook: aap-config.yml
+#    credentials:
+#      - Controller Credential
+#    ask_verbosity_on_launch: true
 
 ...
